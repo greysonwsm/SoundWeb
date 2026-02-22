@@ -5,16 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Caseoh Soundboard</title>
 <style>
-    body {
+    html, body {
         margin: 0;
         padding: 0;
-        height: 100vh;
+        height: 100%;
         background: radial-gradient(circle at center, #1e1e1e, #111);
+        font-family: Arial, sans-serif;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        font-family: Arial, sans-serif;
-        overflow-x: hidden;
+        overflow: hidden;
     }
 
     h1 {
@@ -34,23 +33,25 @@
 
     .soundboard {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 25px;
-        width: 95%;
-        max-width: 1400px;
-        padding-bottom: 50px;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-auto-rows: 1fr;
+        gap: 10px;
+        flex: 1; /* take all remaining vertical space */
+        width: 100vw;
+        padding: 10px;
+        box-sizing: border-box;
         animation: floatGrid 6s ease-in-out infinite alternate;
     }
 
     @keyframes floatGrid {
         0% { transform: translateY(0px); }
-        50% { transform: translateY(-10px); }
+        50% { transform: translateY(-5px); }
         100% { transform: translateY(0px); }
     }
 
     .soundboard iframe {
         width: 100%;
-        aspect-ratio: 1 / 1.6;
+        height: 100%;
         border-radius: 15px;
         border: 2px solid #444;
         box-shadow: 0 5px 15px rgba(0,0,0,0.5);
@@ -59,7 +60,7 @@
     }
 
     .soundboard iframe:hover {
-        transform: scale(1.15) rotate(-1deg);
+        transform: scale(1.2) rotate(-1deg);
         border-color: #ff6600;
         box-shadow: 0 15px 40px rgba(255,102,0,0.6);
         z-index: 10;
@@ -67,13 +68,13 @@
 
     @keyframes float {
         0% { transform: translateY(0); }
-        50% { transform: translateY(-8px); }
+        50% { transform: translateY(-6px); }
         100% { transform: translateY(0); }
     }
 
     @media (max-width: 600px) {
         h1 { font-size: 2rem; }
-        .soundboard { gap: 15px; }
+        .soundboard { gap: 5px; }
     }
 </style>
 </head>
