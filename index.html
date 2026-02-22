@@ -8,13 +8,12 @@
     html, body {
         margin: 0;
         padding: 0;
-        height: 100%;
         background: linear-gradient(135deg, #1e1e1e, #111);
         font-family: Arial, sans-serif;
         display: flex;
         flex-direction: column;
         align-items: center;
-        overflow-x: hidden;
+        min-height: 100vh;
     }
 
     h1 {
@@ -32,33 +31,24 @@
         to { text-shadow: 0 0 25px #ff6600, 0 0 50px #ffcc00; }
     }
 
+    /* The soundboard container is now compact vertically */
     .soundboard {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        align-items: center;
         gap: 15px;
-        width: 100%;
-        flex: 1;
         padding: 10px;
-        box-sizing: border-box;
-        overflow-y: auto;
-        animation: floatGrid 6s ease-in-out infinite alternate;
-    }
-
-    @keyframes floatGrid {
-        0% { transform: translateY(0); }
-        50% { transform: translateY(-5px); }
-        100% { transform: translateY(0); }
+        max-width: 1200px;
+        /* removed flex:1 or height settings */
     }
 
     .soundboard iframe {
-        width: 110px;
+        width: 150px;
         height: 200px;
-        border: 2px solid #444;
         border-radius: 12px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        border: 2px solid #444;
         box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
         animation: float 3s ease-in-out infinite alternate;
     }
 
@@ -77,24 +67,21 @@
 
     @media (max-width: 600px) {
         h1 { font-size: 2rem; }
-        .soundboard iframe {
-            width: 90px;
-            height: 160px;
-        }
+        .soundboard iframe { width: 110px; height: 160px; }
     }
 </style>
 </head>
 <body>
     <h1>Caseoh Soundboard</h1>
     <div class="soundboard">
-        <iframe width="110" height="200" src="https://www.myinstants.com/instant/caseoh-at-burger-king-64222/embed/" frameborder="0" scrolling="no"></iframe>
-        <iframe width="110" height="200" src="https://www.myinstants.com/instant/caseoh-i-am-not-shaped-like-a-ferris-wheel-23344/embed/" frameborder="0" scrolling="no"></iframe>
-        <iframe width="110" height="200" src="https://www.myinstants.com/instant/caseoh-your-banned-11448/embed/" frameborder="0" scrolling="no"></iframe>
-        <iframe width="110" height="200" src="https://www.myinstants.com/instant/caseoh-shrimp-alfredo-54880/embed/" frameborder="0" scrolling="no"></iframe>
-        <iframe width="110" height="200" src="https://www.myinstants.com/instant/i-think-i-for-real-just-got-a-virus-caseoh-3203/embed/" frameborder="0" scrolling="no"></iframe>
-        <iframe width="110" height="200" src="https://www.myinstants.com/instant/caseoh-lego-peice-70594/embed/" frameborder="0" scrolling="no"></iframe>
-        <iframe width="110" height="200" src="https://www.myinstants.com/instant/24-inches-of-wiener-62338/embed/" frameborder="0" scrolling="no"></iframe>
-        <iframe width="110" height="200" src="https://www.myinstants.com/instant/fist-me-caseoh-84310/embed/" frameborder="0" scrolling="no"></iframe>
+        <iframe width="150" height="200" src="https://www.myinstants.com/instant/caseoh-at-burger-king-64222/embed/" frameborder="0" scrolling="no"></iframe>
+        <iframe width="150" height="200" src="https://www.myinstants.com/instant/caseoh-i-am-not-shaped-like-a-ferris-wheel-23344/embed/" frameborder="0" scrolling="no"></iframe>
+        <iframe width="150" height="200" src="https://www.myinstants.com/instant/caseoh-your-banned-11448/embed/" frameborder="0" scrolling="no"></iframe>
+        <iframe width="150" height="200" src="https://www.myinstants.com/instant/caseoh-shrimp-alfredo-54880/embed/" frameborder="0" scrolling="no"></iframe>
+        <iframe width="150" height="200" src="https://www.myinstants.com/instant/i-think-i-for-real-just-got-a-virus-caseoh-3203/embed/" frameborder="0" scrolling="no"></iframe>
+        <iframe width="150" height="200" src="https://www.myinstants.com/instant/caseoh-lego-peice-70594/embed/" frameborder="0" scrolling="no"></iframe>
+        <iframe width="150" height="200" src="https://www.myinstants.com/instant/24-inches-of-wiener-62338/embed/" frameborder="0" scrolling="no"></iframe>
+        <iframe width="150" height="200" src="https://www.myinstants.com/instant/fist-me-caseoh-84310/embed/" frameborder="0" scrolling="no"></iframe>
     </div>
 </body>
 </html>
